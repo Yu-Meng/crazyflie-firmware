@@ -183,6 +183,7 @@ PROJ_OBJ_CF2 += lpsTwrTag.o
 PROJ_OBJ_CF2 += lpsTdoaTag.o
 PROJ_OBJ_CF2 += flowdeck.o
 PROJ_OBJ_CF2 += oa.o
+PROJ_OBJ_CF2 += multiranger.o
 
 ifeq ($(LPS_TDOA_ENABLE), 1)
 CFLAGS += -DLPS_TDOA_ENABLE
