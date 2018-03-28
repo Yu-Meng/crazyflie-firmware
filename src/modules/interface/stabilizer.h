@@ -64,5 +64,6 @@ void stabilizerResetEmergencyStop();
  */
 void stabilizerSetEmergencyStopTimeout(int timeout);
 
+float getAccZ();
 
 #endif /* STABILIZER_H_ */

@@ -58,6 +58,7 @@
 
 // Definition of eeprom and deck I2C buss
 #define I2C_DECK_CLOCK_SPEED                400000
+//#define I2C_DECK_CLOCK_SPEED                100000
 
 // Misc constants.
 #define I2C_NO_BLOCK				    0

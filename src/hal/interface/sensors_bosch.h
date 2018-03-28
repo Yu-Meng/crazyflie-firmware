@@ -28,12 +28,11 @@
 
 #include <math.h>
 
+#include "zranger.h"
 #include "stm32fxxx.h"
 
 #include "sensors.h"
 #include "imu.h"
-
-#include "zranger.h"
 
 #include "FreeRTOS.h"
 #include "semphr.h"

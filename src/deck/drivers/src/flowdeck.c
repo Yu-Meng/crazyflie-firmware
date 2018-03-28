@@ -66,7 +66,9 @@ static bool isInit = false;
 // Disables pushing the flow measurement in the EKF
 static bool useFlowDisabled = false;
 
-#define NCS_PIN DECK_GPIO_IO3
+//#define NCS_PIN DECK_GPIO_IO3
+
+#define NCS_PIN DECK_GPIO_IO4
 
 typedef struct motionBurst_s {
   union {
@@ -318,6 +320,7 @@ static void pamotionInit()
 
   // Initialize the VL53 sensor using the zRanger deck driver
   const DeckDriver *zRanger = deckFindDriverByName("bcZRanger");
+
   zRanger->init(NULL);
 
   // Initialize CS Pin

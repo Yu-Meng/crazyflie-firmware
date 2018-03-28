@@ -186,6 +186,7 @@ bool motorsTest(void)
       motorsBeep(MOTORS[i], false, 0, 0);
       vTaskDelay(M2T(MOTORS_TEST_DELAY_TIME_MS));
 #else
+      DEBUG_PRINT("Motor stop from motorsTest\n");
       motorsSetRatio(MOTORS[i], MOTORS_TEST_RATIO);
       vTaskDelay(M2T(MOTORS_TEST_ON_TIME_MS));
       motorsSetRatio(MOTORS[i], 0);

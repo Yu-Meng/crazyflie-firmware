@@ -56,6 +56,7 @@ void assertFail(char *exp, char *file, int line)
   storeAssertSnapshotData(file, line);
   DEBUG_PRINT("Assert failed %s:%d\n", file, line);
 
+  DEBUG_PRINT("Motor stop from assertFail\n");
   motorsSetRatio(MOTOR_M1, 0);
   motorsSetRatio(MOTOR_M2, 0);
   motorsSetRatio(MOTOR_M3, 0);

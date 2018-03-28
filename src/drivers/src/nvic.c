@@ -31,6 +31,10 @@
 #include "cfassert.h"
 
 #include "uart1.h"
+
+//yumeng add to debug motors
+#include "debug.h"
+
 #define UART_PRINT    uart1Printf
 
 #define DONT_DISCARD __attribute__((used))
@@ -130,6 +134,7 @@ void DONT_DISCARD printHardFault(uint32_t* hardfaultArgs)
   UART_PRINT("DFSR = %x\n", (*((volatile unsigned int *)(0xE000ED30))));
   UART_PRINT("AFSR = %x\n", (*((volatile unsigned int *)(0xE000ED3C))));
 
+  DEBUG_PRINT("Motor stop from printHardFault\n");
   motorsSetRatio(MOTOR_M1, 0);
   motorsSetRatio(MOTOR_M2, 0);
   motorsSetRatio(MOTOR_M3, 0);
@@ -148,6 +153,7 @@ void DONT_DISCARD printHardFault(uint32_t* hardfaultArgs)
  */
 void DONT_DISCARD MemManage_Handler(void)
 {
+  DEBUG_PRINT("Motor stop from MemManage_Handler\n");
   /* Go to infinite loop when Memory Manage exception occurs */
   motorsSetRatio(MOTOR_M1, 0);
   motorsSetRatio(MOTOR_M2, 0);
@@ -168,6 +174,7 @@ void DONT_DISCARD MemManage_Handler(void)
  */
 void DONT_DISCARD BusFault_Handler(void)
 {
+  DEBUG_PRINT("Motor stop from BusFault_Handler\n");
   /* Go to infinite loop when Bus Fault exception occurs */
   motorsSetRatio(MOTOR_M1, 0);
   motorsSetRatio(MOTOR_M2, 0);
@@ -188,6 +195,7 @@ void DONT_DISCARD BusFault_Handler(void)
  */
 void DONT_DISCARD UsageFault_Handler(void)
 {
+  DEBUG_PRINT("Motor stop from UsageFault_Handler\n");
   /* Go to infinite loop when Usage Fault exception occurs */
   motorsSetRatio(MOTOR_M1, 0);
   motorsSetRatio(MOTOR_M2, 0);

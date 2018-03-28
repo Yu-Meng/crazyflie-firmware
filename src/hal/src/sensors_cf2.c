@@ -30,12 +30,11 @@
 
 #include <math.h>
 #include <stm32f4xx.h>
+#include "zranger.h"
 
 #include "lps25h.h"
 #include "mpu6500.h"
 #include "ak8963.h"
-#include "zranger.h"
-
 #include "FreeRTOS.h"
 #include "semphr.h"
 #include "task.h"

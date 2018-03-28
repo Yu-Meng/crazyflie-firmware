@@ -64,6 +64,13 @@
 #include "deck.h"
 #include "extrx.h"
 
+//for grid eye
+#include "grideye.h"
+//for gyus42
+#include "gyus42uart.h"
+
+
+//#include "mb1242.h"
 /* Private variable */
 static bool selftestPassed;
 static bool canFly;
@@ -168,6 +175,18 @@ void systemTask(void *arg)
 #ifdef PROXIMITY_ENABLED
   proximityInit();
 #endif
+
+  //Grideye init and test
+//  gridEyeInit();
+//  gridEyeTest();
+
+  //gyus42 init and test
+//  gyus42Init(UART_RATE_HIGH);
+//  gyus42Test();
+
+
+
+
 
   //Test the modules
   pass &= systemTest();

@@ -31,6 +31,9 @@
 
 #include "motors.h"
 
+//add by yumeng
+#include "debug.h"
+
 static bool motorSetEnable = false;
 
 static struct {
@@ -65,6 +68,7 @@ bool powerDistributionTest(void)
 
 void powerStop()
 {
+  DEBUG_PRINT("Motor stop from powerStop\n");
   motorsSetRatio(MOTOR_M1, 0);
   motorsSetRatio(MOTOR_M2, 0);
   motorsSetRatio(MOTOR_M3, 0);
@@ -93,6 +97,7 @@ void powerDistribution(const control_t *control)
 
   if (motorSetEnable)
   {
+//	DEBUG_PRINT("MPS1:%d\n", motorPowerSet.m1);
     motorsSetRatio(MOTOR_M1, motorPowerSet.m1);
     motorsSetRatio(MOTOR_M2, motorPowerSet.m2);
     motorsSetRatio(MOTOR_M3, motorPowerSet.m3);
@@ -100,6 +105,7 @@ void powerDistribution(const control_t *control)
   }
   else
   {
+//	DEBUG_PRINT("MP1:%d\n", motorPowerSet.m1);
     motorsSetRatio(MOTOR_M1, motorPower.m1);
     motorsSetRatio(MOTOR_M2, motorPower.m2);
     motorsSetRatio(MOTOR_M3, motorPower.m3);

@@ -38,3 +38,36 @@ void zRangerTask(void* arg);
 bool zRangerReadRange(zDistance_t* zrange, const uint32_t tick);
 
 #endif /* _ZRANGER_H_ */
+
+/*
+ * Head for AMG8833 Grid-eye
+ * by Yumeng
+ */
+
+//#define GRIDEYE_DEFAULT_ADDRESS 0b1101000
+//
+//#define GRIDEYE_TASK_FREQ 100
+//
+//#define GRIDEYE_ADDR_AUTO_INC 0x80
+//
+//#define PIXEL0                0x00
+//
+//#define GRIDEYE_ADDR_BG_TEMP  0x0E
+//
+//#define THRESHOLD_LEVEL1      2
+//#define THRESHOLD_LEVEL2      3
+//#define RED                   4
+//#define ORANGE                3
+//#define YELLOW                2
+//#define WHITE                 1
+//
+//#define ARRAY_SIZE       8
+//#define WAITTOCHECK     90
+//#define CHECKED         91
+//#define NEIGHBOR        92
+//#define BOUNDARY        99
+
+
+
+
+

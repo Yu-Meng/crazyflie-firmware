@@ -104,9 +104,12 @@ static int nextI2CAddress = VL53L0X_DEFAULT_ADDRESS+1;
 
 bool vl53l0xInit(VL53L0xDev* dev, I2C_Dev *I2Cx, bool io_2V8)
 {
+  DEBUG_PRINT("Init start");
   dev->I2Cx = I2Cx;
   dev->devAddr = VL53L0X_DEFAULT_ADDRESS;
   i2cdevInit(dev->I2Cx);
+//
+//  DEBUG_PRINT("Init start");
 
   dev->io_timeout = 0;
   dev->did_timeout = 0;
@@ -216,6 +219,7 @@ bool vl53l0xInitSensor(VL53L0xDev* dev, bool io_2v8)
 
   // set final range signal rate limit to 0.25 MCPS (million counts per second)
   vl53l0xSetSignalRateLimit(dev, 0.25);
+//  vl53l0xSetSignalRateLimit(dev, 0.1);
 
   i2cdevWriteByte(dev->I2Cx, dev->devAddr, VL53L0X_RA_SYSTEM_SEQUENCE_CONFIG, 0xFF);
 

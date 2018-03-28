@@ -64,11 +64,15 @@ struct this_s {
 };
 
 // Maximum roll/pitch angle permited
-static float rpLimit  = 20;
-static float rpLimitOverhead = 1.10f;
+//static float rpLimit  = 20;
+//static float rpLimitOverhead = 1.10f;
+static float rpLimit  = 8;
+static float rpLimitOverhead = 1.1f;
 // Velocity maximums
-static float xyVelMax = 1.0f;
-static float zVelMax  = 1.0f;
+//static float xyVelMax = 1.0f;
+//static float zVelMax  = 1.0f;
+static float xyVelMax = 0.5f;
+static float zVelMax  = 0.5f;
 static float velMaxOverhead = 1.10f;
 static const float thrustScale = 1000.0f;
 
@@ -80,7 +84,8 @@ static const float thrustScale = 1000.0f;
 static struct this_s this = {
   .pidVX = {
     .init = {
-      .kp = 25.0f,
+//      .kp = 25.0f,
+	  .kp = 18.0f,
       .ki = 1.0f,
       .kd = 0.0f,
     },
@@ -89,7 +94,8 @@ static struct this_s this = {
 
   .pidVY = {
     .init = {
-      .kp = 25.0f,
+      //.kp = 25.0f,
+      .kp = 18.0f,
       .ki = 1.0f,
       .kd = 0.0f,
     },
@@ -98,8 +104,9 @@ static struct this_s this = {
 
   .pidVZ = {
     .init = {
-      .kp = 25,
-      .ki = 15,
+//      .kp = 25,
+      .kp = 10,
+      .ki = 6,
       .kd = 0,
     },
     .pid.dt = DT,
@@ -107,8 +114,10 @@ static struct this_s this = {
 
   .pidX = {
     .init = {
-      .kp = 2.0f,
-      .ki = 0,
+      //.kp = 2.0f,
+      //.ki = 0,
+      .kp = 25.0f,
+      .ki = 30.0f,
       .kd = 0,
     },
     .pid.dt = DT,
@@ -116,8 +125,10 @@ static struct this_s this = {
 
   .pidY = {
     .init = {
-      .kp = 2.0f,
-      .ki = 0,
+      //.kp = 2.0f,
+      //.ki = 0,
+	  .kp = 25.0f,
+	  .ki = 30.0f,
       .kd = 0,
     },
     .pid.dt = DT,
@@ -125,6 +136,7 @@ static struct this_s this = {
 
   .pidZ = {
     .init = {
+   	//.kp = 2.0f,
       .kp = 2.0f,
       .ki = 0.5,
       .kd = 0,
@@ -132,8 +144,10 @@ static struct this_s this = {
     .pid.dt = DT,
   },
 
-  .thrustBase = 36000,
-  .thrustMin  = 20000,
+  //.thrustBase = 36000,
+  //.thrustMin  = 20000,
+  .thrustBase = 20000,
+  .thrustMin  = 10000,
 };
 #endif
 

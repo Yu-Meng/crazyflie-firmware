@@ -45,10 +45,14 @@
 #define CPPM_TIMER_CH_Init           TIM_OC1Init
 #define CPPM_TIMER_CH_PreloadConfig  TIM_OC1PreloadConfig
 #define CPPM_TIMER_CH_SetCompare     TIM_SetCompare1
-#define CPPM_GPIO_RCC                RCC_AHB1Periph_GPIOA
-#define CPPM_GPIO_PORT               GPIOA
-#define CPPM_GPIO_PIN                GPIO_Pin_7
-#define CPPM_GPIO_SOURCE             GPIO_PinSource7
+//#define CPPM_GPIO_RCC                RCC_AHB1Periph_GPIOA
+//#define CPPM_GPIO_PORT               GPIOA
+//#define CPPM_GPIO_PIN                GPIO_Pin_7
+//#define CPPM_GPIO_SOURCE             GPIO_PinSource7
+#define CPPM_GPIO_RCC                RCC_AHB1Periph_GPIOB
+#define CPPM_GPIO_PORT               GPIOB
+#define CPPM_GPIO_PIN                GPIO_Pin_10
+#define CPPM_GPIO_SOURCE             GPIO_PinSource10
 #define CPPM_GPIO_AF                 GPIO_AF_TIM14
 
 #define CPPM_TIM_PRESCALER           (84 - 1) // TIM14 clock running at sysclk/2. Will give 1us tick.
